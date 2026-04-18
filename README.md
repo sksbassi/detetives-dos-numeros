@@ -1,22 +1,15 @@
-# Detetive dos Números - Entrega 1
+# Detetive dos Numeros
 
-Primeira entrega do protótipo em Godot 4, focada apenas na navegação base da experiência.
+Versao simples do projeto para entrega parcial.
 
-## Escopo desta entrega
-- `SplashScreen`: tela inicial de abertura/carregamento
-- `MainMenu`: menu principal do protótipo
-- `GameOver`: tela de fim de jogo
+## O que tem
+- 2 fases
+- 2 vidas
+- ao errar perde 1 vida
+- pausa simples no topo
+- fim de jogo simples
 
-## Estrutura usada
+## Arquivos principais
 - `project.godot`
-- `scenes/SplashScreen.tscn`
-- `scenes/MainMenu.tscn`
-- `scenes/GameOver.tscn`
-- `scripts/splash_screen.gd`
-- `scripts/main_menu.gd`
-- `scripts/game_over.gd`
-
-## Como executar
-1. Abra o projeto no Godot 4.
-2. Rode a cena principal com `F5`.
-3. A aplicação abrirá pela splash screen.
+- `scenes/main.tscn`
+- `scripts/main.gd`

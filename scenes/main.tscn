@@ -1,0 +1,231 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.95, 0.95, 0.95, 1)
+
+[node name="RootMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="RootVBox" type="VBoxContainer" parent="RootMargin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TopRow" type="HBoxContainer" parent="RootMargin/RootVBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="RootMargin/RootVBox/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Detetive dos Numeros"
+
+[node name="BtnPause" type="Button" parent="RootMargin/RootVBox/TopRow"]
+layout_mode = 2
+text = "Pausa"
+
+[node name="InfoPanel" type="PanelContainer" parent="RootMargin/RootVBox"]
+layout_mode = 2
+
+[node name="InfoMargin" type="MarginContainer" parent="RootMargin/RootVBox/InfoPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="InfoVBox" type="VBoxContainer" parent="RootMargin/RootVBox/InfoPanel/InfoMargin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LivesLabel" type="Label" parent="RootMargin/RootVBox/InfoPanel/InfoMargin/InfoVBox"]
+layout_mode = 2
+text = "Vidas: 2"
+
+[node name="PhaseLabel" type="Label" parent="RootMargin/RootVBox/InfoPanel/InfoMargin/InfoVBox"]
+layout_mode = 2
+text = "Fase 1 de 2"
+
+[node name="QuestionLabel" type="Label" parent="RootMargin/RootVBox/InfoPanel/InfoMargin/InfoVBox"]
+layout_mode = 2
+text = "Pergunta"
+
+[node name="FeedbackLabel" type="Label" parent="RootMargin/RootVBox/InfoPanel/InfoMargin/InfoVBox"]
+layout_mode = 2
+text = "Escolha uma resposta."
+
+[node name="OptionsVBox" type="VBoxContainer" parent="RootMargin/RootVBox/InfoPanel/InfoMargin/InfoVBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="StartOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="StartCenter" type="CenterContainer" parent="StartOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartPanel" type="PanelContainer" parent="StartOverlay/StartCenter"]
+custom_minimum_size = Vector2(420, 220)
+layout_mode = 2
+
+[node name="StartMargin" type="MarginContainer" parent="StartOverlay/StartCenter/StartPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="StartVBox" type="VBoxContainer" parent="StartOverlay/StartCenter/StartPanel/StartMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="StartTitle" type="Label" parent="StartOverlay/StartCenter/StartPanel/StartMargin/StartVBox"]
+layout_mode = 2
+text = "Inicio"
+horizontal_alignment = 1
+
+[node name="StartText" type="Label" parent="StartOverlay/StartCenter/StartPanel/StartMargin/StartVBox"]
+layout_mode = 2
+text = "Versao simples com 2 fases e 2 vidas."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BtnStart" type="Button" parent="StartOverlay/StartCenter/StartPanel/StartMargin/StartVBox"]
+layout_mode = 2
+text = "Comecar"
+
+[node name="PauseOverlay" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.45)
+
+[node name="PauseCenter" type="CenterContainer" parent="PauseOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PausePanel" type="PanelContainer" parent="PauseOverlay/PauseCenter"]
+custom_minimum_size = Vector2(360, 200)
+layout_mode = 2
+
+[node name="PauseMargin" type="MarginContainer" parent="PauseOverlay/PauseCenter/PausePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="PauseVBox" type="VBoxContainer" parent="PauseOverlay/PauseCenter/PausePanel/PauseMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="PauseTitle" type="Label" parent="PauseOverlay/PauseCenter/PausePanel/PauseMargin/PauseVBox"]
+layout_mode = 2
+text = "Jogo pausado"
+horizontal_alignment = 1
+
+[node name="BtnResume" type="Button" parent="PauseOverlay/PauseCenter/PausePanel/PauseMargin/PauseVBox"]
+layout_mode = 2
+text = "Continuar"
+
+[node name="BtnRestart" type="Button" parent="PauseOverlay/PauseCenter/PausePanel/PauseMargin/PauseVBox"]
+layout_mode = 2
+text = "Reiniciar"
+
+[node name="EndOverlay" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="EndCenter" type="CenterContainer" parent="EndOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EndPanel" type="PanelContainer" parent="EndOverlay/EndCenter"]
+custom_minimum_size = Vector2(420, 220)
+layout_mode = 2
+
+[node name="EndMargin" type="MarginContainer" parent="EndOverlay/EndCenter/EndPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="EndVBox" type="VBoxContainer" parent="EndOverlay/EndCenter/EndPanel/EndMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="EndTitle" type="Label" parent="EndOverlay/EndCenter/EndPanel/EndMargin/EndVBox"]
+layout_mode = 2
+text = "Fim de jogo"
+horizontal_alignment = 1
+
+[node name="EndText" type="Label" parent="EndOverlay/EndCenter/EndPanel/EndMargin/EndVBox"]
+layout_mode = 2
+text = "Resultado"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BtnPlayAgain" type="Button" parent="EndOverlay/EndCenter/EndPanel/EndMargin/EndVBox"]
+layout_mode = 2
+text = "Jogar novamente"
+
+[connection signal="pressed" from="RootMargin/RootVBox/TopRow/BtnPause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="StartOverlay/StartCenter/StartPanel/StartMargin/StartVBox/BtnStart" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="PauseOverlay/PauseCenter/PausePanel/PauseMargin/PauseVBox/BtnResume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseOverlay/PauseCenter/PausePanel/PauseMargin/PauseVBox/BtnRestart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="EndOverlay/EndCenter/EndPanel/EndMargin/EndVBox/BtnPlayAgain" to="." method="_on_play_again_pressed"]
