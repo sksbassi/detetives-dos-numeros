@@ -44,10 +44,11 @@ theme_override_constants/separation = 12
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Detetive dos Numeros"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="BtnPause" type="Button" parent="RootMargin/RootVBox/TopRow"]
 layout_mode = 2
-text = "Pausa"
+text = "Menu"
 
 [node name="InfoPanel" type="PanelContainer" parent="RootMargin/RootVBox"]
 layout_mode = 2
@@ -122,7 +123,7 @@ horizontal_alignment = 1
 
 [node name="StartText" type="Label" parent="StartOverlay/StartCenter/StartPanel/StartMargin/StartVBox"]
 layout_mode = 2
-text = "Versao simples com 2 fases e 2 vidas."
+text = "Bem-vindo ao jogo Numeropolis."
 horizontal_alignment = 1
 autowrap_mode = 3
 
