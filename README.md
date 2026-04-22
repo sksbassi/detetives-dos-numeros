@@ -7,6 +7,7 @@ Versao simples do projeto para entrega parcial.
 - 2 vidas
 - ao errar perde 1 vida
 - pausa simples no topo
+- controle de volume no menu do jogo
 - fim de jogo simples
 
 ## Arquivos principais
