@@ -33,10 +33,10 @@ Projeto em **Godot 4.6** desenvolvido como entrega de faculdade, com foco em jog
 3. Rode com `F5`.
 
 ## Integrantes
-- Steffany — tela de início e fim de jogo
-- João — mecânica do jogo
-- Ricardo — menu
-- Guilherme — som
+- Steffany 
+- João
+- Ricardo 
+- Guilherme
 
 ## Observação
 Os arquivos de texto do projeto foram mantidos em UTF-8.
