@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[node name="RewardPopup" type="PopupPanel"]
+initial_position = 1
+size = Vector2i(380, 220)
+
+[node name="RewardLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 360.0
+offset_bottom = 200.0
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text = "Recompensa"
+

@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[node name="StoryModal" type="PopupPanel"]
+initial_position = 1
+size = Vector2i(700, 420)
+
+[node name="StoryLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 680.0
+offset_bottom = 400.0
+autowrap_mode = 3
+text = "História do jogo"
+

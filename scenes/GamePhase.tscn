@@ -1,0 +1,88 @@
+[gd_scene format=3]
+
+[node name="GamePhase" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand_mode = 1
+
+[node name="PlayerName" type="Label" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 52.0
+text = "Jogador"
+
+[node name="Timer" type="Label" parent="."]
+layout_mode = 1
+offset_left = 240.0
+offset_top = 20.0
+offset_right = 360.0
+offset_bottom = 52.0
+text = "Tempo"
+
+[node name="Progress" type="ProgressBar" parent="."]
+layout_mode = 1
+offset_left = 380.0
+offset_top = 20.0
+offset_right = 760.0
+offset_bottom = 44.0
+
+[node name="Points" type="Label" parent="."]
+layout_mode = 1
+offset_left = 780.0
+offset_top = 20.0
+offset_right = 960.0
+offset_bottom = 52.0
+text = "Pontos"
+
+[node name="Question" type="Label" parent="."]
+layout_mode = 1
+offset_left = 160.0
+offset_top = 140.0
+offset_right = 1120.0
+offset_bottom = 220.0
+horizontal_alignment = 1
+autowrap_mode = 3
+text = "Pergunta"
+
+[node name="Answers" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 240.0
+offset_top = 250.0
+offset_right = 1040.0
+offset_bottom = 520.0
+theme_override_constants/separation = 10
+
+[node name="ConfirmButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 340.0
+offset_top = 560.0
+offset_right = 620.0
+offset_bottom = 620.0
+text = "Confirmar"
+
+[node name="PauseButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 660.0
+offset_top = 560.0
+offset_right = 940.0
+offset_bottom = 620.0
+text = "Pausa"
+
+[node name="TimeoutPopup" type="PopupPanel" parent="."]
+initial_position = 1
+size = Vector2i(360, 180)
+
+[node name="RewardPopup" type="PopupPanel" parent="."]
+initial_position = 1
+size = Vector2i(360, 180)
+

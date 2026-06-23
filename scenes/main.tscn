@@ -1,140 +1,465 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://bjafpamw6bikj"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://bf2oykjx5r1rg" path="res://scripts/main.gd" id="1_main"]
 
-[node name="Main" type="Control"]
+[node name="Main" type="Control" unique_id=160474005]
+clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1")
+script = ExtResource("1_main")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=614245652]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.95, 0.95, 0.95, 1)
+color = Color(0.976471, 0.960784, 1, 1)
 
-[node name="UiClickPlayer" type="AudioStreamPlayer" parent="."]
-bus = &"Master"
-
-[node name="RootMargin" type="MarginContainer" parent="."]
+[node name="BackgroundDecor" type="Control" parent="." unique_id=27227135]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackdropGlow" type="ColorRect" parent="BackgroundDecor" unique_id=727989851]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.968627, 0.976471, 1, 0.55)
+
+[node name="BlobLeft" type="ColorRect" parent="BackgroundDecor" unique_id=124013009]
+layout_mode = 1
+offset_left = -60.0
+offset_top = 60.0
+offset_right = 280.0
+offset_bottom = 360.0
+color = Color(0.309804, 0.67451, 0.996078, 0.16)
+
+[node name="BlobRight" type="ColorRect" parent="BackgroundDecor" unique_id=2108266856]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -330.0
+offset_top = 380.0
+offset_right = -10.0
+offset_bottom = 700.0
+grow_horizontal = 0
+color = Color(1, 0.419608, 0.603922, 0.14)
+
+[node name="AmbientLayerBack" type="Control" parent="BackgroundDecor" unique_id=1542963330]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AmbientLayerFront" type="Control" parent="BackgroundDecor" unique_id=368649875]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MainCenter" type="ScrollContainer" parent="." unique_id=1709965805]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="OuterMargin" type="MarginContainer" parent="MainCenter" unique_id=676464386]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 18
+
+[node name="ContentColumn" type="VBoxContainer" parent="MainCenter/OuterMargin" unique_id=873510294]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MainContainer" type="PanelContainer" parent="MainCenter/OuterMargin/ContentColumn" unique_id=834140361]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"MainCard"
+
+[node name="MainMargin" type="MarginContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer" unique_id=1973672396]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="RootVBox" type="VBoxContainer" parent="RootMargin"]
+[node name="MainVBox" type="VBoxContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin" unique_id=1980272048]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 16
 
-[node name="TopRow" type="HBoxContainer" parent="RootMargin/RootVBox"]
+[node name="HUDCard" type="PanelContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox" unique_id=1612412297]
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_type_variation = &"HudCard"
 
-[node name="TitleLabel" type="Label" parent="RootMargin/RootVBox/TopRow"]
+[node name="HUDMargin" type="MarginContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/HUDCard" unique_id=1181948105]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Detetive dos Numeros"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
 
-[node name="BtnPause" type="Button" parent="RootMargin/RootVBox/TopRow"]
-layout_mode = 2
-text = "Menu"
-
-[node name="InfoPanel" type="PanelContainer" parent="RootMargin/RootVBox"]
-layout_mode = 2
-
-[node name="InfoMargin" type="MarginContainer" parent="RootMargin/RootVBox/InfoPanel"]
-layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="InfoVBox" type="VBoxContainer" parent="RootMargin/RootVBox/InfoPanel/InfoMargin"]
+[node name="HUDVBox" type="VBoxContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/HUDCard/HUDMargin" unique_id=603161477]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="LivesLabel" type="Label" parent="RootMargin/RootVBox/InfoPanel/InfoMargin/InfoVBox"]
+[node name="TopRow" type="HBoxContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/HUDCard/HUDMargin/HUDVBox" unique_id=1577272878]
 layout_mode = 2
-text = "Vidas: 2"
+theme_override_constants/separation = 10
 
-[node name="PhaseLabel" type="Label" parent="RootMargin/RootVBox/InfoPanel/InfoMargin/InfoVBox"]
+[node name="PlayerLabel" type="Label" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/HUDCard/HUDMargin/HUDVBox/TopRow" unique_id=963950527]
 layout_mode = 2
-text = "Fase 1 de 2"
+theme_type_variation = &"PillLabel"
+text = "🕵️ Explorador"
 
-[node name="QuestionLabel" type="Label" parent="RootMargin/RootVBox/InfoPanel/InfoMargin/InfoVBox"]
+[node name="ScoreLabel" type="Label" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/HUDCard/HUDMargin/HUDVBox/TopRow" unique_id=395028573]
 layout_mode = 2
-text = "Pergunta"
+theme_type_variation = &"PillLabel"
+text = "⭐ 0"
 
-[node name="FeedbackLabel" type="Label" parent="RootMargin/RootVBox/InfoPanel/InfoMargin/InfoVBox"]
+[node name="TimerLabel" type="Label" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/HUDCard/HUDMargin/HUDVBox/TopRow" unique_id=102271475]
 layout_mode = 2
-text = "Escolha uma resposta."
+theme_type_variation = &"PillLabel"
+text = "⏰ 60 s"
 
-[node name="OptionsVBox" type="VBoxContainer" parent="RootMargin/RootVBox/InfoPanel/InfoMargin/InfoVBox"]
+[node name="Spacer" type="Control" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/HUDCard/HUDMargin/HUDVBox/TopRow" unique_id=432439665]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BtnJourney" type="Button" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/HUDCard/HUDMargin/HUDVBox/TopRow" unique_id=1479604599]
+layout_mode = 2
+theme_type_variation = &"SecondaryButton"
+text = "🗺 Jornada"
+
+[node name="BtnPause" type="Button" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/HUDCard/HUDMargin/HUDVBox/TopRow" unique_id=1867175566]
+layout_mode = 2
+theme_type_variation = &"SecondaryButton"
+text = "⏸ Pausa"
+
+[node name="TitleLabel" type="Label" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/HUDCard/HUDMargin/HUDVBox" unique_id=572120850]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "Detetive dos Números"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/HUDCard/HUDMargin/HUDVBox" unique_id=1262929542]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+show_percentage = false
+
+[node name="ProgressLabel" type="Label" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/HUDCard/HUDMargin/HUDVBox" unique_id=737102203]
+layout_mode = 2
+theme_type_variation = &"CaptionLabel"
+text = "Etapa 0 de 0"
+horizontal_alignment = 1
+
+[node name="BodyRow" type="HBoxContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox" unique_id=1386935057]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="StageCard" type="PanelContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow" unique_id=682969868]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.92
+theme_type_variation = &"StageCard"
+
+[node name="StageMargin" type="MarginContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard" unique_id=936455862]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="StageVBox" type="VBoxContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin" unique_id=1701124760]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PhaseLabel" type="Label" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin/StageVBox" unique_id=1151979051]
+layout_mode = 2
+theme_type_variation = &"HeadingLabel"
+text = "Bairro dos Brinquedos | Contagem"
+horizontal_alignment = 1
+
+[node name="StoryLabel" type="Label" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin/StageVBox" unique_id=1907844816]
+layout_mode = 2
+size_flags_vertical = 3
+text = "História"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MentorLabel" type="Label" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin/StageVBox" unique_id=1552574418]
+layout_mode = 2
+theme_type_variation = &"MentorLabel"
+text = "Professor Ponto"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="StageFrame" type="PanelContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin/StageVBox" unique_id=1262399148]
+layout_mode = 2
+theme_type_variation = &"StageFrame"
+
+[node name="StageFrameMargin" type="MarginContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin/StageVBox/StageFrame" unique_id=1448809762]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="StageFrameVBox" type="VBoxContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin/StageVBox/StageFrame/StageFrameMargin" unique_id=2135708850]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="StageNameLabel" type="Label" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin/StageVBox/StageFrame/StageFrameMargin/StageFrameVBox" unique_id=1058092183]
+layout_mode = 2
+theme_type_variation = &"CaptionLabel"
+text = "Cenário"
+horizontal_alignment = 1
+
+[node name="StageCanvas" type="PanelContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin/StageVBox/StageFrame/StageFrameMargin/StageFrameVBox" unique_id=1562587910]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"StageCanvas"
+
+[node name="StageCanvasMargin" type="MarginContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin/StageVBox/StageFrame/StageFrameMargin/StageFrameVBox/StageCanvas" unique_id=98033210]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="StageCanvasRoot" type="Control" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin/StageVBox/StageFrame/StageFrameMargin/StageFrameVBox/StageCanvas/StageCanvasMargin" unique_id=1813050285]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StageParticles" type="Control" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin/StageVBox/StageFrame/StageFrameMargin/StageFrameVBox/StageCanvas/StageCanvasMargin/StageCanvasRoot" unique_id=1002600921]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="StageRowsCenter" type="CenterContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin/StageVBox/StageFrame/StageFrameMargin/StageFrameVBox/StageCanvas/StageCanvasMargin/StageCanvasRoot" unique_id=1045986369]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StageRows" type="VBoxContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin/StageVBox/StageFrame/StageFrameMargin/StageFrameVBox/StageCanvas/StageCanvasMargin/StageCanvasRoot/StageRowsCenter" unique_id=2072055917]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BossAvatarLabel" type="Label" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin/StageVBox/StageFrame/StageFrameMargin/StageFrameVBox/StageCanvas/StageCanvasMargin/StageCanvasRoot" unique_id=649656563]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = 10.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_type_variation = &"AvatarLabel"
+text = "👹"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StageHintLabel" type="Label" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/StageCard/StageMargin/StageVBox" unique_id=1565039156]
+layout_mode = 2
+theme_type_variation = &"CaptionLabel"
+text = "Dica visual"
+autowrap_mode = 3
+
+[node name="SideColumn" type="VBoxContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow" unique_id=63883538]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.08
+theme_override_constants/separation = 16
+
+[node name="QuestionCard" type="PanelContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn" unique_id=295050228]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"QuestionCard"
+
+[node name="QuestionMargin" type="MarginContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn/QuestionCard" unique_id=145666792]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="QuestionVBox" type="VBoxContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn/QuestionCard/QuestionMargin" unique_id=1551585355]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="StartOverlay" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.55)
-
-[node name="StartCenter" type="CenterContainer" parent="StartOverlay"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="StartPanel" type="PanelContainer" parent="StartOverlay/StartCenter"]
-custom_minimum_size = Vector2(420, 220)
+[node name="ThemeLabel" type="Label" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn/QuestionCard/QuestionMargin/QuestionVBox" unique_id=2094550212]
 layout_mode = 2
+theme_type_variation = &"CaptionLabel"
+text = "Tema"
+horizontal_alignment = 1
 
-[node name="StartMargin" type="MarginContainer" parent="StartOverlay/StartCenter/StartPanel"]
+[node name="QuestionLabel" type="Label" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn/QuestionCard/QuestionMargin/QuestionVBox" unique_id=116990234]
+layout_mode = 2
+theme_type_variation = &"QuestionLabel"
+text = "Pergunta principal"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="FeedbackLabel" type="Label" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn/QuestionCard/QuestionMargin/QuestionVBox" unique_id=50719689]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Feedback"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="OptionsCard" type="PanelContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn" unique_id=1776336122]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"OptionsCard"
+
+[node name="OptionsMargin" type="MarginContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn/OptionsCard" unique_id=770531169]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="OptionsVBox" type="VBoxContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn/OptionsCard/OptionsMargin" unique_id=1482094295]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="OptionsTitleLabel" type="Label" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn/OptionsCard/OptionsMargin/OptionsVBox" unique_id=1417632171]
+layout_mode = 2
+theme_type_variation = &"HeadingLabel"
+text = "Escolha uma alternativa"
+horizontal_alignment = 1
+
+[node name="OptionsGrid" type="GridContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn/OptionsCard/OptionsMargin/OptionsVBox" unique_id=685200660]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="ActionsCard" type="PanelContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn" unique_id=21592697]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"ActionsCard"
+
+[node name="ActionsMargin" type="MarginContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn/ActionsCard" unique_id=110923]
 layout_mode = 2
 theme_override_constants/margin_left = 18
 theme_override_constants/margin_top = 18
 theme_override_constants/margin_right = 18
 theme_override_constants/margin_bottom = 18
 
-[node name="StartVBox" type="VBoxContainer" parent="StartOverlay/StartCenter/StartPanel/StartMargin"]
+[node name="ActionsRow" type="HBoxContainer" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn/ActionsCard/ActionsMargin" unique_id=76512247]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="StartTitle" type="Label" parent="StartOverlay/StartCenter/StartPanel/StartMargin/StartVBox"]
+[node name="BtnConfirm" type="Button" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn/ActionsCard/ActionsMargin/ActionsRow" unique_id=557541962]
 layout_mode = 2
-text = "Inicio"
+size_flags_horizontal = 3
+theme_type_variation = &"PrimaryButton"
+text = "Confirmar resposta"
+
+[node name="BtnNext" type="Button" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox/BodyRow/SideColumn/ActionsCard/ActionsMargin/ActionsRow" unique_id=555191289]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SecondaryButton"
+disabled = true
+text = "Próxima fase"
+
+[node name="BottomFill" type="Control" parent="MainCenter/OuterMargin/ContentColumn/MainContainer/MainMargin/MainVBox" unique_id=137341805]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RewardPopupLayer" type="CanvasLayer" parent="." unique_id=1275710273]
+
+[node name="RewardPopup" type="PanelContainer" parent="RewardPopupLayer" unique_id=826407550]
+visible = false
+custom_minimum_size = Vector2(360, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_top = 96.0
+offset_right = 180.0
+offset_bottom = 256.0
+grow_horizontal = 2
+theme_type_variation = &"RewardPopupCard"
+
+[node name="BtnRewardClose" type="Button" parent="RewardPopupLayer/RewardPopup" unique_id=1540010021]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_type_variation = &"PrimaryButton"
+text = "X"
+
+[node name="RewardPopupMargin" type="MarginContainer" parent="RewardPopupLayer/RewardPopup" unique_id=1561523323]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 22
+
+[node name="RewardPopupVBox" type="VBoxContainer" parent="RewardPopupLayer/RewardPopup/RewardPopupMargin" unique_id=1269698744]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="RewardPopupTitle" type="Label" parent="RewardPopupLayer/RewardPopup/RewardPopupMargin/RewardPopupVBox" unique_id=1023546099]
+layout_mode = 2
+theme_type_variation = &"HeadingLabel"
+text = "Presente desbloqueado"
 horizontal_alignment = 1
 
-[node name="StartText" type="Label" parent="StartOverlay/StartCenter/StartPanel/StartMargin/StartVBox"]
+[node name="RewardPopupBody" type="Label" parent="RewardPopupLayer/RewardPopup/RewardPopupMargin/RewardPopupVBox" unique_id=166714330]
 layout_mode = 2
-text = "Bem-vindo ao jogo Numeropolis."
+theme_type_variation = &"BodyLabel"
+text = "+3 pontos"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="BtnStart" type="Button" parent="StartOverlay/StartCenter/StartPanel/StartMargin/StartVBox"]
-layout_mode = 2
-text = "Comecar"
-
-[node name="PauseOverlay" type="ColorRect" parent="."]
+[node name="FeedbackFlash" type="ColorRect" parent="." unique_id=1216927084]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -142,9 +467,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.45)
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
 
-[node name="PauseCenter" type="CenterContainer" parent="PauseOverlay"]
+[node name="TransitionOverlay" type="ColorRect" parent="." unique_id=1553483807]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="StartOverlay" type="ColorRect" parent="." unique_id=596419063]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.176471, 0.27451, 0.596078, 0.84)
+
+[node name="StartCenter" type="CenterContainer" parent="StartOverlay" unique_id=2089967871]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -152,97 +497,228 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PausePanel" type="PanelContainer" parent="PauseOverlay/PauseCenter"]
-custom_minimum_size = Vector2(360, 260)
+[node name="StartCard" type="PanelContainer" parent="StartOverlay/StartCenter" unique_id=205983618]
+custom_minimum_size = Vector2(880, 560)
 layout_mode = 2
+theme_type_variation = &"IntroCard"
 
-[node name="PauseMargin" type="MarginContainer" parent="PauseOverlay/PauseCenter/PausePanel"]
+[node name="StartMargin" type="MarginContainer" parent="StartOverlay/StartCenter/StartCard" unique_id=782295205]
 layout_mode = 2
-theme_override_constants/margin_left = 18
-theme_override_constants/margin_top = 18
-theme_override_constants/margin_right = 18
-theme_override_constants/margin_bottom = 18
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 28
 
-[node name="PauseVBox" type="VBoxContainer" parent="PauseOverlay/PauseCenter/PausePanel/PauseMargin"]
+[node name="StartVBox" type="VBoxContainer" parent="StartOverlay/StartCenter/StartCard/StartMargin" unique_id=652294399]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="StartTitle" type="Label" parent="StartOverlay/StartCenter/StartCard/StartMargin/StartVBox" unique_id=1572801047]
+layout_mode = 2
+theme_type_variation = &"ModalTitleLabel"
+text = "Detetive dos Números"
+horizontal_alignment = 1
+
+[node name="StartSubtitle" type="Label" parent="StartOverlay/StartCenter/StartCard/StartMargin/StartVBox" unique_id=1048164713]
+layout_mode = 2
+theme_type_variation = &"BodyLabel"
+text = "Digite seu nome e comece a aventura."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="NameInput" type="LineEdit" parent="StartOverlay/StartCenter/StartCard/StartMargin/StartVBox" unique_id=553064552]
+layout_mode = 2
+placeholder_text = "Digite seu nome aqui"
+
+[node name="SuggestionRow" type="HBoxContainer" parent="StartOverlay/StartCenter/StartCard/StartMargin/StartVBox" unique_id=1190872925]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BtnSuggestion1" type="Button" parent="StartOverlay/StartCenter/StartCard/StartMargin/StartVBox/SuggestionRow" unique_id=756840656]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"GhostButton"
+text = "Explorador"
+
+[node name="BtnSuggestion2" type="Button" parent="StartOverlay/StartCenter/StartCard/StartMargin/StartVBox/SuggestionRow" unique_id=79663884]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"GhostButton"
+text = "Pequeno Gênio"
+
+[node name="BtnSuggestion3" type="Button" parent="StartOverlay/StartCenter/StartCard/StartMargin/StartVBox/SuggestionRow" unique_id=634268782]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"GhostButton"
+text = "Aventureiro"
+
+[node name="StartStory" type="Label" parent="StartOverlay/StartCenter/StartCard/StartMargin/StartVBox" unique_id=2015982360]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+theme_type_variation = &"BodyLabel"
+text = "História"
+autowrap_mode = 3
+
+[node name="StartButtons" type="HBoxContainer" parent="StartOverlay/StartCenter/StartCard/StartMargin/StartVBox" unique_id=1383216395]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="PauseTitle" type="Label" parent="PauseOverlay/PauseCenter/PausePanel/PauseMargin/PauseVBox"]
+[node name="BtnStartGame" type="Button" parent="StartOverlay/StartCenter/StartCard/StartMargin/StartVBox/StartButtons" unique_id=1184887367]
 layout_mode = 2
-text = "Jogo pausado"
+size_flags_horizontal = 3
+theme_type_variation = &"PrimaryButton"
+text = "Começar"
+
+[node name="BtnTestPhase" type="Button" parent="StartOverlay/StartCenter/StartCard/StartMargin/StartVBox/StartButtons" unique_id=215687931]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SecondaryButton"
+text = "Fase de teste"
+
+[node name="BtnOpenJourneyStart" type="Button" parent="StartOverlay/StartCenter/StartCard/StartMargin/StartVBox/StartButtons" unique_id=603555044]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SecondaryButton"
+text = "Ver jornada"
+
+[node name="JourneyOverlay" type="ColorRect" parent="." unique_id=908777704]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.180392, 0.360784, 0.8)
+
+[node name="JourneyCenter" type="CenterContainer" parent="JourneyOverlay" unique_id=696677683]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="JourneyCard" type="PanelContainer" parent="JourneyOverlay/JourneyCenter" unique_id=1717728312]
+custom_minimum_size = Vector2(840, 560)
+layout_mode = 2
+theme_type_variation = &"JourneyCard"
+
+[node name="JourneyMargin" type="MarginContainer" parent="JourneyOverlay/JourneyCenter/JourneyCard" unique_id=1027768416]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 28
+
+[node name="JourneyVBox" type="VBoxContainer" parent="JourneyOverlay/JourneyCenter/JourneyCard/JourneyMargin" unique_id=784531420]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="JourneyTopRow" type="HBoxContainer" parent="JourneyOverlay/JourneyCenter/JourneyCard/JourneyMargin/JourneyVBox" unique_id=852018994]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BtnJourneyBack" type="Button" parent="JourneyOverlay/JourneyCenter/JourneyCard/JourneyMargin/JourneyVBox/JourneyTopRow" unique_id=543487789]
+layout_mode = 2
+theme_type_variation = &"GhostButton"
+text = "Voltar"
+
+[node name="JourneyTitle" type="Label" parent="JourneyOverlay/JourneyCenter/JourneyCard/JourneyMargin/JourneyVBox/JourneyTopRow" unique_id=1941734052]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"ModalTitleLabel"
+text = "Jornada"
 horizontal_alignment = 1
 
-[node name="VolumeLabel" type="Label" parent="PauseOverlay/PauseCenter/PausePanel/PauseMargin/PauseVBox"]
+[node name="BtnJourneyClose" type="Button" parent="JourneyOverlay/JourneyCenter/JourneyCard/JourneyMargin/JourneyVBox/JourneyTopRow" unique_id=283319051]
 layout_mode = 2
-text = "Volume: 80%"
+theme_type_variation = &"GhostButton"
+text = "X"
+
+[node name="JourneyPathLabel" type="Label" parent="JourneyOverlay/JourneyCenter/JourneyCard/JourneyMargin/JourneyVBox" unique_id=2058107361]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_type_variation = &"BodyLabel"
+text = "Mapa da jornada"
+autowrap_mode = 3
+
+[node name="JourneyStoryLabel" type="Label" parent="JourneyOverlay/JourneyCenter/JourneyCard/JourneyMargin/JourneyVBox" unique_id=1915014410]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+theme_type_variation = &"BodyLabel"
+text = "História"
+autowrap_mode = 3
+
+[node name="PauseOverlay" type="ColorRect" parent="." unique_id=618397853]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14902, 0.145098, 0.278431, 0.76)
+
+[node name="PauseCenter" type="CenterContainer" parent="PauseOverlay" unique_id=973460785]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseCard" type="PanelContainer" parent="PauseOverlay/PauseCenter" unique_id=1532927070]
+custom_minimum_size = Vector2(720, 430)
+layout_mode = 2
+theme_type_variation = &"ModalCard"
+
+[node name="BtnPauseOverlayClose" type="Button" parent="PauseOverlay/PauseCenter/PauseCard" unique_id=97700314]
+visible = false
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_type_variation = &"PrimaryButton"
+
+[node name="PauseMargin" type="MarginContainer" parent="PauseOverlay/PauseCenter/PauseCard" unique_id=2042085236]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="PauseVBox" type="VBoxContainer" parent="PauseOverlay/PauseCenter/PauseCard/PauseMargin" unique_id=332764888]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PauseTitle" type="Label" parent="PauseOverlay/PauseCenter/PauseCard/PauseMargin/PauseVBox" unique_id=1760939423]
+layout_mode = 2
+theme_type_variation = &"ModalTitleLabel"
+text = "Jogo em pausa"
 horizontal_alignment = 1
 
-[node name="VolumeSlider" type="HSlider" parent="PauseOverlay/PauseCenter/PausePanel/PauseMargin/PauseVBox"]
+[node name="PauseText" type="Label" parent="PauseOverlay/PauseCenter/PauseCard/PauseMargin/PauseVBox" unique_id=407812429]
 layout_mode = 2
-min_value = 0.0
-max_value = 100.0
-value = 80.0
-step = 1.0
+theme_type_variation = &"BodyLabel"
+text = "Escolha o que deseja fazer."
+horizontal_alignment = 1
+autowrap_mode = 3
 
-[node name="BtnResume" type="Button" parent="PauseOverlay/PauseCenter/PausePanel/PauseMargin/PauseVBox"]
+[node name="BtnContinue" type="Button" parent="PauseOverlay/PauseCenter/PauseCard/PauseMargin/PauseVBox" unique_id=759796802]
 layout_mode = 2
+theme_type_variation = &"PrimaryButton"
 text = "Continuar"
 
-[node name="BtnRestart" type="Button" parent="PauseOverlay/PauseCenter/PausePanel/PauseMargin/PauseVBox"]
+[node name="BtnRestartPhase" type="Button" parent="PauseOverlay/PauseCenter/PauseCard/PauseMargin/PauseVBox" unique_id=1566859134]
 layout_mode = 2
-text = "Reiniciar"
+theme_type_variation = &"PrimaryButton"
+text = "Reiniciar fase"
 
-[node name="EndOverlay" type="ColorRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.55)
-
-[node name="EndCenter" type="CenterContainer" parent="EndOverlay"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="EndPanel" type="PanelContainer" parent="EndOverlay/EndCenter"]
-custom_minimum_size = Vector2(420, 220)
+[node name="BtnRestartGame" type="Button" parent="PauseOverlay/PauseCenter/PauseCard/PauseMargin/PauseVBox" unique_id=230097584]
 layout_mode = 2
+theme_type_variation = &"PrimaryButton"
+text = "Reiniciar jogo"
 
-[node name="EndMargin" type="MarginContainer" parent="EndOverlay/EndCenter/EndPanel"]
+[node name="BtnBackToStart" type="Button" parent="PauseOverlay/PauseCenter/PauseCard/PauseMargin/PauseVBox" unique_id=271862231]
 layout_mode = 2
-theme_override_constants/margin_left = 18
-theme_override_constants/margin_top = 18
-theme_override_constants/margin_right = 18
-theme_override_constants/margin_bottom = 18
-
-[node name="EndVBox" type="VBoxContainer" parent="EndOverlay/EndCenter/EndPanel/EndMargin"]
-layout_mode = 2
-theme_override_constants/separation = 12
-
-[node name="EndTitle" type="Label" parent="EndOverlay/EndCenter/EndPanel/EndMargin/EndVBox"]
-layout_mode = 2
-text = "Fim de jogo"
-horizontal_alignment = 1
-
-[node name="EndText" type="Label" parent="EndOverlay/EndCenter/EndPanel/EndMargin/EndVBox"]
-layout_mode = 2
-text = "Resultado"
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="BtnPlayAgain" type="Button" parent="EndOverlay/EndCenter/EndPanel/EndMargin/EndVBox"]
-layout_mode = 2
-text = "Jogar novamente"
-
-[connection signal="pressed" from="RootMargin/RootVBox/TopRow/BtnPause" to="." method="_on_pause_pressed"]
-[connection signal="pressed" from="StartOverlay/StartCenter/StartPanel/StartMargin/StartVBox/BtnStart" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="PauseOverlay/PauseCenter/PausePanel/PauseMargin/PauseVBox/BtnResume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PauseOverlay/PauseCenter/PausePanel/PauseMargin/PauseVBox/BtnRestart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="EndOverlay/EndCenter/EndPanel/EndMargin/EndVBox/BtnPlayAgain" to="." method="_on_play_again_pressed"]
-[connection signal="value_changed" from="PauseOverlay/PauseCenter/PausePanel/PauseMargin/PauseVBox/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+theme_type_variation = &"PrimaryButton"
+text = "Voltar ao início"

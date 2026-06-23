@@ -1,0 +1,192 @@
+{
+  "title": "Detetive dos Números: A Jornada Encantada de Numerópolis",
+  "subtitle": "Jogo educativo infantil com narrativa mágica, estrelas, selos e um grande chefão final.",
+  "name_suggestions": [
+    "Explorador",
+    "Pequeno Gênio",
+    "Aventureiro"
+  ],
+  "journey_path": [
+    "🏡 Vila das Primeiras Pistas",
+    "💌 Carta Brilhante do Chamado",
+    "👓 Encontro com o Professor Ponto",
+    "🧸 Bairro dos Brinquedos Saltitantes",
+    "🍭 Ponte Arco-Íris dos Doces",
+    "🏫 Escola da Lógica Feliz",
+    "🌳 Floresta das Trilhas Luminosas",
+    "🧪 Laboratório das Estrelas",
+    "🐧 Torre Congelante do Chefão"
+  ],
+  "story_modal": [
+    "✨ Você é o Detetive Mirim, o guardião mais curioso, atencioso e corajoso de toda a cidade de Numerópolis. Quando alguém se perde nas contas, quando uma pista some ou quando os números ficam embaralhados, é o seu olhar esperto que ajuda tudo a voltar ao lugar certo.",
+    "🌙 Em uma noite fria e cintilante, enquanto as luzes coloridas da cidade brilhavam baixinho e todos dormiam tranquilos, um vento travesso atravessou ruas, praças, pontes e jardins. No meio dessa ventania apareceu Mestre Bagunça, um vilão que adora confundir contas, espalhar pistas erradas e deixar cada bairro mais desorganizado do que antes.",
+    "🌪️ Com um sopro de magia atrapalhada, Mestre Bagunça misturou quantidades, derrubou sinais, embaralhou respostas e espalhou desafios pelos cantinhos mais importantes de Numerópolis. Patinhos mudaram de lugar, caixas de doces se misturaram, balões voaram, folhas douradas se espalharam e até as bandeiras do castelo começaram a perder o brilho.",
+    "👓 Foi então que o Professor Ponto surgiu com seu tablet encantado, sua mochila cheia de ideias e um grande sorriso de confiança. Ele reuniu mapas, pistas e dicas especiais para transformar cada desafio matemático em uma missão divertida, como se cada conta resolvida acendesse uma nova lanterna no caminho da aventura.",
+    "🐾 Ao seu lado está Calculina, a gatinha robô mais esperta da cidade. Ela observa os cenários com muito cuidado, adora organizar informações, presta atenção nos detalhes e fica sempre pronta para ajudar você a respirar fundo, olhar com calma e descobrir a resposta certa com coragem e inteligência.",
+    "🗺️ Sua jornada passa por lugares encantadores e cheios de personalidade. Primeiro vêm os brinquedos saltitantes, depois a praça doce e colorida, o pátio alegre da escola, a floresta luminosa e o grande castelo das bandeiras douradas. Em cada lugar existe uma bagunça diferente, e em cada bagunça existe uma nova oportunidade para mostrar como você pensa bem.",
+    "⭐ Cada fase concluída salva um pedacinho da cidade e devolve alegria para seus moradores. Quando você observa rápido, pensa com atenção e resolve as contas com capricho, também conquista estrelas e selos especiais que mostram como sua investigação está ficando cada vez mais brilhante.",
+    "📚 Mas esta não é apenas uma missão de respostas certas. É uma aventura sobre atenção, coragem, curiosidade e descoberta. Cada pergunta foi feita para que você explore o cenário, compare informações, confie no seu raciocínio e perceba que aprender matemática também pode ser uma brincadeira cheia de surpresa, fantasia e satisfação.",
+    "🏰 No final do caminho, quando todas as pistas principais forem resolvidas, você chegará à Torre Congelante, o lugar onde Mestre Bagunça escondeu sua última confusão. Lá no alto, entre ventos gelados, gelo brilhante e ecos misteriosos, espera o temido Monstro do Gelo, guardião do desafio final.",
+    "❄️ Somente um verdadeiro detetive dos números conseguirá enfrentar essa batalha com calma, inteligência e determinação. Se você observar bem, calcular com cuidado e seguir até o fim, Numerópolis voltará a sorrir, as ruas ficarão iluminadas de novo e todos lembrarão para sempre do herói que salvou a cidade com raciocínio, coragem e imaginação."
+  ],
+  "badges": {
+    "fast": "⚡ Rápido como um raio",
+    "smart": "🧠 Super cérebro",
+    "perfect": "🎯 Acerto perfeito"
+  },
+  "phases": [
+    {
+      "id": "brinquedos",
+      "title": "Bairro dos Brinquedos",
+      "theme": "Contagem",
+      "story": "O portão mágico do bairro só abre quando o Detetive conta corretamente os patinhos da fonte.",
+      "mentor": "Conte só os patinhos. Ignore o que não faz parte da pergunta.",
+      "question": "Quantos patinhos de borracha estão na fonte?",
+      "correct_answer": 4,
+      "options": [3, 4, 5, 6],
+      "extra_distractors": [2, 7, 8],
+      "background_name": "Fonte dos Patinhos",
+      "background_symbols": "🦆 🦆 🫧 ⚽",
+      "visual_lines": [
+        "🫧   🦆   🦆",
+        "🦆   ⚽   🦆"
+      ],
+      "visual_hint": "Conte apenas os patinhos da fonte.",
+      "background_color": [0.98, 0.94, 0.72],
+      "count_target": 4,
+      "count_label": "Patinhos encontrados",
+      "count_symbol": "🦆",
+      "wrong_items": ["🫧", "⚽"],
+      "sticker": "Patinho dourado"
+    },
+    {
+      "id": "doces",
+      "title": "Bairro dos Doces",
+      "theme": "Adição",
+      "story": "A ponte colorida da praça dos doces só aparece quando a soma das caixas de pirulito é descoberta.",
+      "mentor": "Some o que já tinha com o que chegou depois.",
+      "question": "Há 2 caixas de pirulitos na banca e chegaram mais 3. Quantas caixas há agora?",
+      "correct_answer": 5,
+      "options": [4, 5, 6, 7],
+      "extra_distractors": [3, 8, 9],
+      "background_name": "Praça dos Doces",
+      "background_symbols": "🍭 🍭  +  🍭 🍭 🍭",
+      "visual_lines": [
+        "Antes:      🍭   🍭",
+        "Chegaram:   🍭   🍭   🍭",
+        "Distrações: 🍬   🧁"
+      ],
+      "visual_hint": "Junte as caixas que já estavam com as que chegaram.",
+      "background_color": [1.0, 0.82, 0.9],
+      "count_target": 5,
+      "count_label": "Caixas reunidas",
+      "count_symbol": "🍭",
+      "wrong_items": ["🧁", "🍬"],
+      "sticker": "Calculina feliz"
+    },
+    {
+      "id": "escola",
+      "title": "Escola da Lógica",
+      "theme": "Subtração",
+      "story": "Os balões da festa ficaram espalhados e a escola precisa saber quantos sobraram no pátio.",
+      "mentor": "Pense no total e retire o que voou.",
+      "question": "Havia 5 balões e 1 voou. Quantos sobraram?",
+      "correct_answer": 4,
+      "options": [3, 4, 5, 6],
+      "extra_distractors": [2, 7, 8],
+      "background_name": "Pátio da Escola",
+      "background_symbols": "🎈 🎈 🎈 🎈   |   🎈☁️",
+      "visual_lines": [
+        "Ficaram:    🎈   🎈   🎈   🎈",
+        "Voou:       🎈☁️",
+        "Distração:  📚"
+      ],
+      "visual_hint": "Conte só os balões que continuam no pátio.",
+      "background_color": [0.84, 0.93, 1.0],
+      "count_target": 4,
+      "count_label": "Balões restantes",
+      "count_symbol": "🎈",
+      "wrong_items": ["☁️", "🌬️"],
+      "sticker": "Balão sorridente"
+    },
+    {
+      "id": "floresta",
+      "title": "Floresta das Folhas",
+      "theme": "Adição Maior",
+      "story": "Na floresta, as folhas mágicas escondem a conta que mostra o caminho até a clareira secreta.",
+      "mentor": "Agora os números cresceram. Some com atenção.",
+      "question": "Se existem 20 folhas douradas e aparecem mais 10, quantas folhas há ao todo?",
+      "correct_answer": 30,
+      "options": [20, 25, 30, 35],
+      "extra_distractors": [15, 28, 40],
+      "background_name": "Clareira das Folhas",
+      "background_symbols": "2 grupos de 10  +  1 grupo de 10",
+      "visual_lines": [
+        "Grupo 1: 🍃x10",
+        "Grupo 2: 🍃x10",
+        "Novo grupo: 🍃x10"
+      ],
+      "visual_hint": "Cada grupo vale 10 folhas. Some os grupos.",
+      "background_color": [0.87, 0.96, 0.8],
+      "count_target": 30,
+      "count_label": "Folhas ao todo",
+      "count_symbol": "🍃x10",
+      "wrong_items": ["🍄", "🪵"],
+      "sticker": "Folha brilhante"
+    },
+    {
+      "id": "castelo",
+      "title": "Castelo dos Números",
+      "theme": "Operações Combinadas",
+      "story": "No castelo encantado, bandeiras douradas brilham quando a conta certa é resolvida.",
+      "mentor": "Resolva por partes: some primeiro e depois retire com calma.",
+      "question": "No castelo, 8 bandeiras já brilhavam, 4 foram acesas e 2 apagaram. Quantas ficaram brilhando?",
+      "correct_answer": 10,
+      "options": [8, 9, 10, 12],
+      "extra_distractors": [6, 11, 14],
+      "background_name": "Salão do Castelo",
+      "background_symbols": "8 bandeiras + 4 bandeiras - 2 apagadas",
+      "visual_lines": [
+        "Brilhando:  🚩x8",
+        "Acenderam:  🚩x4",
+        "Apagaram:   🌫️x2"
+      ],
+      "visual_hint": "Some as bandeiras acesas e depois retire as que apagaram.",
+      "background_color": [0.98, 0.9, 0.7],
+      "count_target": 10,
+      "count_label": "Bandeiras brilhando",
+      "count_symbol": "🚩",
+      "wrong_items": ["⚔️", "🛡️"],
+      "sticker": "Coroa brilhante"
+    },
+    {
+      "id": "boss",
+      "type": "boss",
+      "title": "Torre Congelante do Monstro do Gelo",
+      "theme": "Chefão Final",
+      "story": "❄️ No topo da torre surge o Monstro do Gelo, uma criatura enorme que faz o chão tremer e cobre Numerópolis de neve sempre que ninguém resolve as contas a tempo.",
+      "mentor": "🧠 No chefão, cada acerto enfraquece o monstro. Cada erro custa uma vida, então leia tudo com atenção e ataque com coragem.",
+      "background_name": "Torre Congelante",
+      "background_symbols": "❄️ 🐧 ❄️ 🧊",
+      "visual_lines": [
+        "❄️   ❄️   👹   ❄️   ❄️",
+        "🧊   O chão treme quando o monstro bate   🧊"
+      ],
+      "visual_hint": "⚔️ Responda rápido, some com calma e quebre o gelo do chefão antes que a torre congele tudo.",
+      "background_color": [0.82, 0.92, 1.0],
+      "boss_name": "Monstro do Gelo",
+      "boss_avatar": "👹",
+      "boss_lives": 5,
+      "player_lives": 3,
+      "time_limit": 300,
+      "rounds": [
+        { "question": "Quanto é 9 + 6?", "correct_answer": 15, "options": [13, 15, 16, 18], "extra_distractors": [11, 17, 19] },
+        { "question": "Quanto é 14 - 5?", "correct_answer": 9, "options": [7, 8, 9, 11], "extra_distractors": [6, 10, 12] },
+        { "question": "Quanto é 12 - 4 + 5?", "correct_answer": 13, "options": [10, 12, 13, 15], "extra_distractors": [8, 14, 16] },
+        { "question": "Quanto é 8 + 6 - 3?", "correct_answer": 11, "options": [9, 10, 11, 13], "extra_distractors": [7, 12, 14] },
+        { "question": "Quanto é 7 + 8?", "correct_answer": 15, "options": [12, 14, 15, 17], "extra_distractors": [11, 16, 18] }
+      ],
+      "sticker": "Medalha gelada"
+    }
+  ]
+}
